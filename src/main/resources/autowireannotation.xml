@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+    <bean class="com.springcore.auto.wire.annotation.Address" name="address">
+        <constructor-arg value="Gali no 12"/>
+        <constructor-arg value="Delhi"/>
+        <constructor-arg value="India"/>
+    </bean>
+    <bean class="com.springcore.auto.wire.annotation.Employee" name="employee1" >
+        <property name="empId"><value>121</value></property>
+        <property name="empName"><value>Shivam</value></property>
+        <property name="number"><list><value>989789</value></list></property>
+    </bean>
+    <bean class="com.springcore.auto.wire.annotation.Employee" name="employee2">
+        <property name="empId" value="122"/>
+        <property name="empName" value="Rohan"/>
+        <property name="number"><list><value>9897</value></list></property>
+    </bean>
+    <bean class="com.springcore.auto.wire.annotation.Employee" name="employee3" p:empId="123" p:empName="Aman">
+        <property name="number"><list><value>9897</value></list></property></bean>
+    <!--bean class="com.springcore.auto.wire.annotation.Employee" name="employee4">
+        <constructor-arg><value>124</value></constructor-arg>
+        <constructor-arg><value>Vinit</value></constructor-arg>
+        <constructor-arg> <ref bean="address"/></constructor-arg>
+        <constructor-arg> <list><value>999897453</value><value>989747203</value></list></constructor-arg>
+    </bean>
+    <bean class="com.springcore.auto.wire.annotation.Employee" name="employee5" autowire="constructor">
+        <constructor-arg value="125" type="int"/>
+        <constructor-arg value="Ankit"/>
+        <constructor-arg> <list><value>897876958</value> </list></constructor-arg>
+    </bean>
+    <bean class="com.springcore.auto.wire.annotation.Employee" name="employee6" c:empId="126" c:empName="Hitesh" autowire="constructor">
+        <constructor-arg> <list><value>989747203</value></list></constructor-arg></bean-->
+</beans>
